@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { USER_END_POINT } from "./constant/constant";
 
 function SyncLogs() {
   const [msgs, setMsgs] = useState([]);
 
   const fetchLogs = async () => {
-    const res = await axios.get("https://task-h66k.onrender.com/api/msg");
+    const res = await axios.get(`${USER_END_POINT}/api/msg`);
     console.log("res dekho",res?.data)
     setMsgs(res.data.data);
   };

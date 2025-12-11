@@ -20,6 +20,7 @@ import {
 
 import Table from "./Table";
 import SyncLogs from "./SyncLogs";
+import { USER_END_POINT } from "./constant/constant";
 
 function App() {
   const [inputNames, setInputNames] = useState("");
@@ -27,7 +28,7 @@ function App() {
   const [filter, setFilter] = useState("All");
 
   const loadData = async () => {
-    const res = await axios.get("https://task-h66k.onrender.com/api/all");
+    const res = await axios.get(`${USER_END_POINT}/api/all`);
     setData(res?.data?.data || []);
   };
 
@@ -41,7 +42,7 @@ function App() {
       alert("Please enter at least one name.");
       return;
     }
-    await axios.post("https://task-h66k.onrender.com/api/details", {
+    await axios.post(`${USER_END_POINT}/api/details`, {
       names: namesArray,
     });
 
