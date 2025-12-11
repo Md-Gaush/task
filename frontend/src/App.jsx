@@ -27,7 +27,7 @@ function App() {
   const [filter, setFilter] = useState("All");
 
   const loadData = async () => {
-    const res = await axios.get("http://localhost:8000/api/all");
+    const res = await axios.get("https://task-h66k.onrender.com/api/all");
     setData(res?.data?.data || []);
   };
 
@@ -41,7 +41,7 @@ function App() {
       alert("Please enter at least one name.");
       return;
     }
-    await axios.post("http://localhost:8000/api/details", {
+    await axios.post("https://task-h66k.onrender.com/api/details", {
       names: namesArray,
     });
 

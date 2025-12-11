@@ -5,7 +5,7 @@ function SyncLogs() {
   const [msgs, setMsgs] = useState([]);
 
   const fetchLogs = async () => {
-    const res = await axios.get("http://localhost:8000/api/msg");
+    const res = await axios.get("https://task-h66k.onrender.com/api/msg");
     console.log("res dekho",res?.data)
     setMsgs(res.data.data);
   };
